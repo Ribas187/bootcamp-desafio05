@@ -1,68 +1,71 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h1 align="center">
+    <img alt="GoStack" src="https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/bootcamp-header.png" width="200px" />
+</h1>
 
-## Available Scripts
+<h3 align="center">
+  Desafio 5: Primeiro projeto com ReactJS
+</h3>
 
-In the project directory, you can run:
+<p align="center">“Para quem fica melhor a cada dia, ficar pronto é utopia”!</blockquote>
 
-### `yarn start`
+<p align="center">
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/rocketseat/bootcamp-gostack-desafio-05?color=%2304D361">
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+  <a href="https://rocketseat.com.br">
+    <img alt="Made by Rocketseat" src="https://img.shields.io/badge/made%20by-Rocketseat-%2304D361">
+  </a>
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+  <img alt="License" src="https://img.shields.io/badge/license-MIT-%2304D361">
 
-### `yarn test`
+  <a href="https://github.com/Rocketseat/bootcamp-gostack-desafio-05/stargazers">
+    <img alt="Stargazers" src="https://img.shields.io/github/stars/rocketseat/bootcamp-gostack-desafio-05?style=social">
+  </a>
+</p>
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<p align="center">
+  <a href="#rocket-sobre-a-aplicação">Sobre a aplicação</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-Instalação">Instalação</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+</p>
 
-### `yarn build`
+## :rocket: Sobre a aplicação
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Esta aplicação consiste em buscar repositórios e listar suas issues. Feita com a integração com a api do gitHub.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+### Funcionalidades
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### 1. Captando erros
 
-### `yarn eject`
+`try/catch` por volta do código presente na função `handleSubmit` presente no componente `Main` e caso um repositório não seja encontrado na API do Github, uma borda vermelha é adicionada por volta do input em que o usuário digitou o nome do repositório.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+#### 2. Repositório duplicado
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Antes de fazer a chamada à API na função `handleSubmit` é feita uma verificação para ver se o repositório não está duplicado, ou seja, se ele ainda não existe no estado de `repositories`.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Caso exista, um erro é disparado, e com isso o código cairá no `catch` do `try/catch` criado na funcionalidade anterior.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+#### 3. Filtro de estado
 
-## Learn More
+Filtro de estado na listagem de Issues no detalhe do repositório. Na qual o usuário pode visualizar as issues *abertas*, *fechadas* ou *todas*
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### 4. Paginação
 
-### Code Splitting
+Paginação nas issues listadas no detalhe do repositório. A API do Github lista no máximo 30 issues por página e você pode controlar o número da página atual.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+Botão de próxima página e página anterior. O botão de página anterior fiva desativado na primeira página.
 
-### Analyzing the Bundle Size
+#### Instalação ####
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+```
+yarn install && yarn start
+```
 
-### Making a Progressive Web App
+Quando executar, abra o app em: http://localhost:3000/
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+#### Demo
 
-### Advanced Configuration
+![page1](demo/page1.png)
+![page2](demo/page2.png)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## :memo: Guilherme Ribas
+Desafio realizado por Guilherme Ribas.
